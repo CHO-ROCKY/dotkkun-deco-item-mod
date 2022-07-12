@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=up":{
+      "model": "hogeol-go:beverage_refrigerator_1"
+    },
+    "facing=east":{
+      "model": "hogeol-go:beverage_refrigerator_1"
+    },
+    "facing=north": {
+      "model": "hogeol-go:beverage_refrigerator_1", "y": 270
+    },
+    "facing=south": {
+      "model": "hogeol-go:beverage_refrigerator_1", "y": 90
+    },
+    "facing=west": {
+      "model": "hogeol-go:beverage_refrigerator_1", "y": 180
+    }
+  }
+}

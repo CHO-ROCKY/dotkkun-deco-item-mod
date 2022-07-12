@@ -1,0 +1,16 @@
+[
+{
+  "modid": "hogeol-go",
+  "name": "Hogeol-Go Mod",
+  "description": "Hogeol-Go mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["CH0_Rocky, Yeon_DoDo, Sun_2eehong, MO_ORE"],
+  "credits": "made by CH0_Rocky",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
