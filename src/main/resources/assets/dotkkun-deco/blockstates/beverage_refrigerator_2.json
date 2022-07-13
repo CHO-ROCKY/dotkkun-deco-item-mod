@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=up":{
+      "model": "dotkkun-deco:beverage_refrigerator_2"
+    },
+    "facing=east":{
+      "model": "dotkkun-deco:beverage_refrigerator_2"
+    },
+    "facing=north": {
+      "model": "dotkkun-deco:beverage_refrigerator_2", "y": 270
+    },
+    "facing=south": {
+      "model": "dotkkun-deco:beverage_refrigerator_2", "y": 90
+    },
+    "facing=west": {
+      "model": "dotkkun-deco:beverage_refrigerator_2", "y": 180
+    }
+  }
+}

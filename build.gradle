@@ -14,8 +14,8 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '1.0'
-group = 'com.dotkkun.hogeolgomod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'hogeol-go'
+group = 'com.dotkkun' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'dotkkun-deco'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 

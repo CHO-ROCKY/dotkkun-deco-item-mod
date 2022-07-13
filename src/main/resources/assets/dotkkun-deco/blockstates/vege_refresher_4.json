@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=up":{
+      "model": "dotkkun-deco:vege_refresher_4"
+    },
+    "facing=north":{
+      "model": "dotkkun-deco:vege_refresher_4"
+    },
+    "facing=west": {
+      "model": "dotkkun-deco:vege_refresher_4", "y": 270
+    },
+    "facing=east": {
+      "model": "dotkkun-deco:vege_refresher_4", "y": 90
+    },
+    "facing=south": {
+      "model": "dotkkun-deco:vege_refresher_4", "y": 180
+    }
+  }
+}

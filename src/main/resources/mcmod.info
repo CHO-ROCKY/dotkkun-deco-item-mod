@@ -1,8 +1,8 @@
 [
 {
-  "modid": "hogeol-go",
-  "name": "Hogeol-Go Mod",
-  "description": "Hogeol-Go mod.",
+  "modid": "dotkkun-deco",
+  "name": "Dotkkun Deco Item Mod",
+  "description": "Dotkkun Deco Item Mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
