@@ -119,3 +119,4 @@ public class BeverageRefrigerator1 extends BlockBase {
         return world.setBlockState(pos, net.minecraft.init.Blocks.AIR.getDefaultState(), world.isRemote ? 11 : 3);
     }
 }
+
