@@ -1,7 +1,6 @@
 package com.dotkkun.init;
 
 import com.dotkkun.blocks.*;
-import com.dotkkun.hogeolgomod.blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
@@ -17,5 +16,6 @@ public class ModBlocks {
     public static final Block VEGE_REFRESHER_2 = new VegeRefresher2("vege_refresher_2", Material.IRON);
     public static final Block VEGE_REFRESHER_3 = new VegeRefresher3("vege_refresher_3", Material.IRON);
     public static final Block VEGE_REFRESHER_4 = new VegeRefresher4("vege_refresher_4", Material.IRON);
+    public static final Block WINDOW_MUNTIN = new WindowMuntin("muntin", Material.IRON);
 
 }
