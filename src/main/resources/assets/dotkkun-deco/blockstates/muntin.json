@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=up":{
+      "model": "dotkkun-deco:muntin"
+    },
+    "facing=east":{
+      "model": "dotkkun-deco:muntin"
+    },
+    "facing=north": {
+      "model": "dotkkun-deco:muntin", "y": 270
+    },
+    "facing=south": {
+      "model": "dotkkun-deco:muntin", "y": 90
+    },
+    "facing=west": {
+      "model": "dotkkun-deco:muntin", "y": 180
+    }
+  }
+}
