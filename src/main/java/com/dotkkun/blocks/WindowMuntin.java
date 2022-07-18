@@ -96,3 +96,4 @@ public class WindowMuntin extends BlockBase {
         return this.getDefaultState().withProperty(FACING, placer.getAdjustedHorizontalFacing().getOpposite());
     }
 }
+
