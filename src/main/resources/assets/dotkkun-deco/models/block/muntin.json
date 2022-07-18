@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "block/cube_all",
 	"textures": {
 		"0": "dotkkun-deco:blocks/muntin-2",
 		"1": "dotkkun-deco:blocks/muntin-1",
