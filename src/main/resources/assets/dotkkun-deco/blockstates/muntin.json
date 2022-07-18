@@ -3,16 +3,16 @@
     "facing=up":{
       "model": "dotkkun-deco:muntin"
     },
-    "facing=east":{
+    "facing=south":{
       "model": "dotkkun-deco:muntin"
     },
-    "facing=north": {
+    "facing=east": {
       "model": "dotkkun-deco:muntin", "y": 270
     },
-    "facing=south": {
+    "facing=west": {
       "model": "dotkkun-deco:muntin", "y": 90
     },
-    "facing=west": {
+    "facing=north": {
       "model": "dotkkun-deco:muntin", "y": 180
     }
   }
