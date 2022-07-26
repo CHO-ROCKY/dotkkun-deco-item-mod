@@ -15,7 +15,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class LectureDesk2 extends BlockBase{
+public class LectureDesk2 extends MultiBlockBase{
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
     public LectureDesk2(String name, Material material) {
@@ -101,20 +101,24 @@ public class LectureDesk2 extends BlockBase{
 
     @Override
     public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest){
-        BlockPos pos1 = pos.down();
+        BlockPos pos1;
         BlockPos pos2;
         switch(state.getValue(FACING)){
             case SOUTH:
+                pos1 = pos.west();
                 pos2 = pos.east();
                 break;
             case WEST:
+                pos1 = pos.north();
                 pos2 = pos.south();
                 break;
             case NORTH:
+                pos1 = pos.east();
                 pos2 = pos.west();
                 break;
             case EAST:
             default:
+                pos1 = pos.south();
                 pos2 = pos.north();
                 break;
         }

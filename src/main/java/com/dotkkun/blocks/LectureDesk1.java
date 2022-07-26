@@ -136,21 +136,21 @@ public class LectureDesk1 extends BlockBase{
         BlockPos pos2;
         switch(state.getValue(FACING)){
             case SOUTH:
-                pos1 = pos.east();
-                pos2 = pos1.east();
-                break;
-            case WEST:
-                pos1 = pos.south();
-                pos2 = pos1.south();
-                break;
-            case NORTH:
                 pos1 = pos.west();
                 pos2 = pos1.west();
                 break;
-            case EAST:
-            default:
+            case WEST:
                 pos1 = pos.north();
                 pos2 = pos1.north();
+                break;
+            case NORTH:
+                pos1 = pos.east();
+                pos2 = pos1.east();
+                break;
+            case EAST:
+            default:
+                pos1 = pos.south();
+                pos2 = pos1.south();
                 break;
         }
 
