@@ -15,7 +15,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class StudentDesk2 extends BlockBase{
+public class StudentDesk2 extends MultiBlockBase{
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
     public StudentDesk2(String name, Material material) {
