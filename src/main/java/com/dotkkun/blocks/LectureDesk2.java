@@ -28,6 +28,16 @@ public class LectureDesk2 extends BlockBase{
     }
 
     @Override
+    public boolean isFullCube(IBlockState state){
+        return false;
+    }
+
+    @Override
+    public boolean isOpaqueCube(IBlockState state){
+        return false;
+    }
+
+    @Override
     public IBlockState getStateFromMeta(int meta)
     {
         IBlockState iblockstate = this.getDefaultState();
