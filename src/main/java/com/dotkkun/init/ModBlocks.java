@@ -17,5 +17,7 @@ public class ModBlocks {
     public static final Block VEGE_REFRESHER_3 = new VegeRefresher3("vege_refresher_3", Material.IRON);
     public static final Block VEGE_REFRESHER_4 = new VegeRefresher4("vege_refresher_4", Material.IRON);
     public static final Block WINDOW_MUNTIN = new WindowMuntin("muntin", Material.IRON);
-
+    public static final Block STUDENT_DESK_1 = new StudentDesk1("student_desk_1", Material.IRON);
+    public static final Block STUDENT_DESK_2 = new StudentDesk2("student_desk_2", Material.IRON);
+    public static final Block STUDENT_DESK_3 = new StudentDesk3("student_desk_3", Material.IRON);
 }

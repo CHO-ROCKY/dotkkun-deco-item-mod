@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=up":{
+      "model": "dotkkun-deco:student_desk_3"
+    },
+    "facing=south":{
+      "model": "dotkkun-deco:student_desk_3"
+    },
+    "facing=east": {
+      "model": "dotkkun-deco:student_desk_3", "y": 270
+    },
+    "facing=west": {
+      "model": "dotkkun-deco:student_desk_3", "y": 90
+    },
+    "facing=north": {
+      "model": "dotkkun-deco:student_desk_3", "y": 180
+    }
+  }
+}
