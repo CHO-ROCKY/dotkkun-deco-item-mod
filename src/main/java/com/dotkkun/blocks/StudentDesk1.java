@@ -12,10 +12,18 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class StudentDesk1 extends BlockBase {
+    public static final AxisAlignedBB STUDENT_DESK_WEST_AABB = new AxisAlignedBB(0,0,0.6D,1,1,1);
+    public static final AxisAlignedBB STUDENT_DESK_EAST_AABB = new AxisAlignedBB(0,0,0,1,1,0.4D);
+    public static final AxisAlignedBB STUDENT_DESK_NORTH_AABB = new AxisAlignedBB(0,0,0,0.4D,1,1);
+    public static final AxisAlignedBB STUDENT_DESK_SOUTH_AABB = new AxisAlignedBB(0.6D,0,0,1,1,1);
+
+
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
     public StudentDesk1(String name, Material material) {
@@ -27,6 +35,21 @@ public class StudentDesk1 extends BlockBase {
         setDefaultState(this.getBlockState().getBaseState().withProperty(FACING, EnumFacing.SOUTH));
     }
 
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
+        switch(state.getValue(FACING)){
+            case WEST:
+                return STUDENT_DESK_WEST_AABB;
+            case EAST:
+                return STUDENT_DESK_EAST_AABB;
+            case NORTH:
+                return STUDENT_DESK_NORTH_AABB;
+            case SOUTH:
+            default:
+                return STUDENT_DESK_SOUTH_AABB;
+        }
+
+    }
 
     @Override
     public IBlockState getStateFromMeta(int meta)
