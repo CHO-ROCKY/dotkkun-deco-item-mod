@@ -10,11 +10,18 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class LectureDesk3 extends MultiBlockBase{
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
+
+    public static final AxisAlignedBB LECTURE_DESK_WEST_AABB = new AxisAlignedBB(0,0,0,1,1,0.4D);
+    public static final AxisAlignedBB LECTURE_DESK_EAST_AABB = new AxisAlignedBB(0,0,0.6D,1,1,1);
+    public static final AxisAlignedBB LECTURE_DESK_NORTH_AABB = new AxisAlignedBB(0.6D,0,0,1,1,1);
+    public static final AxisAlignedBB LECTURE_DESK_SOUTH_AABB = new AxisAlignedBB(0,0,0,0.4D,1,1);
 
     public LectureDesk3(String name, Material material) {
         super(name, material);
@@ -23,6 +30,21 @@ public class LectureDesk3 extends MultiBlockBase{
         setResistance(18.0f);
         setSoundType(SoundType.STONE);
         setDefaultState(this.getBlockState().getBaseState().withProperty(FACING, EnumFacing.SOUTH));
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
+        switch(state.getValue(FACING)){
+            case WEST:
+                return LECTURE_DESK_EAST_AABB;
+            case EAST:
+                return LECTURE_DESK_WEST_AABB;
+            case NORTH:
+                return LECTURE_DESK_SOUTH_AABB;
+            case SOUTH:
+            default:
+                return LECTURE_DESK_NORTH_AABB;
+        }
     }
 
     @Override
