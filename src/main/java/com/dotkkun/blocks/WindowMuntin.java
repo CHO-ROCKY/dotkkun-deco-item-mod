@@ -9,10 +9,16 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class WindowMuntin extends BlockBase {
+    public static final AxisAlignedBB WINDOW_MUNTIN_WEST_AABB = new AxisAlignedBB(0,0,0,0.1D,1,1);
+    public static final AxisAlignedBB WINDOW_MUNTIN_EAST_AABB = new AxisAlignedBB(0.9D,0,0,1,1,1);
+    public static final AxisAlignedBB WINDOW_MUNTIN_NORTH_AABB = new AxisAlignedBB(0,0,0,1,1,0.1D);
+    public static final AxisAlignedBB WINDOW_MUNTIN_SOUTH_AABB = new AxisAlignedBB(0,0,0.9D,1,1,1);
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
     public WindowMuntin(String name, Material material) {
@@ -22,6 +28,22 @@ public class WindowMuntin extends BlockBase {
         setResistance(18.0f);
         setSoundType(SoundType.STONE);
         setDefaultState(this.getBlockState().getBaseState().withProperty(FACING, EnumFacing.SOUTH));
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
+        switch(state.getValue(FACING)){
+            case WEST:
+                return WINDOW_MUNTIN_WEST_AABB;
+            case EAST:
+                return WINDOW_MUNTIN_EAST_AABB;
+            case NORTH:
+                return WINDOW_MUNTIN_NORTH_AABB;
+            case SOUTH:
+            default:
+                return WINDOW_MUNTIN_SOUTH_AABB;
+        }
+
     }
 
     @Override
