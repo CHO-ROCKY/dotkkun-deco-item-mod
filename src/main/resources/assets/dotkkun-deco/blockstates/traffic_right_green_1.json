@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=up":{
+      "model": "dotkkun-deco:traffic_right_green_1"
+    },
+    "facing=east":{
+      "model": "dotkkun-deco:traffic_right_green_1"
+    },
+    "facing=north": {
+      "model": "dotkkun-deco:traffic_right_green_1", "y": 270
+    },
+    "facing=south": {
+      "model": "dotkkun-deco:traffic_right_green_1", "y": 90
+    },
+    "facing=west": {
+      "model": "dotkkun-deco:traffic_right_green_1", "y": 180
+    }
+  }
+}

@@ -2,3 +2,6 @@ itemGroup.dotkkun-deco=닷꾼 데코 아이템
 tile.beverage_refrigerator_1.name=음료 냉장고
 tile.vege_refresher_1.name=야채 매대
 tile.muntin.name=아파트 창문 창살
+tile.traffic_right_off_1.name=꺼진 신호등
+tile.traffic_right_green_1.name=초록불 신호등
+tile.traffic_right_red_1.name=빨간불 신호등
