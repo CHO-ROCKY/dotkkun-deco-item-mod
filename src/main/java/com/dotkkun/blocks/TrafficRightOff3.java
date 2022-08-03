@@ -10,11 +10,13 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class TrafficRightOff3 extends MultiBlockBase {
-
+    public static final AxisAlignedBB TRAFFIC_RIGHT_OFF_AABB = new AxisAlignedBB(0.1875D,0,0.1875D,0.75D,1,0.75D);
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
     public TrafficRightOff3(String name, Material material) {
@@ -24,6 +26,11 @@ public class TrafficRightOff3 extends MultiBlockBase {
         setResistance(18.0f);
         setSoundType(SoundType.STONE);
         this.setDefaultState(this.getBlockState().getBaseState().withProperty(FACING, EnumFacing.SOUTH));
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
+        return TRAFFIC_RIGHT_OFF_AABB;
     }
 
     @Override
