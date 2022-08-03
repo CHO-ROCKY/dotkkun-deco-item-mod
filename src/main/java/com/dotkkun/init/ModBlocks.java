@@ -26,4 +26,8 @@ public class ModBlocks {
     public static final Block TRAFFIC_RIGHT_RED_1 = new TrafficRightRed1("traffic_right_red_1", Material.IRON);
     public static final Block TRAFFIC_RIGHT_RED_2 = new TrafficRightRed2("traffic_right_red_2", Material.IRON);
     public static final Block TRAFFIC_RIGHT_RED_3 = new TrafficRightRed3("traffic_right_red_3", Material.IRON);
+    public static final Block MOULDING_DOWN = new MouldingDown("moulding_down", Material.IRON);
+    public static final Block MOULDING_DOWN_CORNER = new MouldingDownCorner("moulding_down_corner", Material.IRON);
+    public static final Block MOULDING_UP = new MouldingUp("moulding_up", Material.IRON);
+    public static final Block MOULDING_UP_CORNER = new MouldingUpCorner("moulding_up_corner", Material.IRON);
 }

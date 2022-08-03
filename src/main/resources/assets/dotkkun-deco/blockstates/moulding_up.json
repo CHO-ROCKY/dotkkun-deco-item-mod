@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=up":{
+      "model": "dotkkun-deco:moulding_up"
+    },
+    "facing=east":{
+      "model": "dotkkun-deco:moulding_up"
+    },
+    "facing=north": {
+      "model": "dotkkun-deco:moulding_up", "y": 270
+    },
+    "facing=south": {
+      "model": "dotkkun-deco:moulding_up", "y": 90
+    },
+    "facing=west": {
+      "model": "dotkkun-deco:moulding_up", "y": 180
+    }
+  }
+}

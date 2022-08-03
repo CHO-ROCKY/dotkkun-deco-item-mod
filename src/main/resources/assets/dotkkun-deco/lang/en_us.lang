@@ -5,3 +5,7 @@ tile.muntin.name=아파트 창문 창살
 tile.traffic_right_off_1.name=꺼진 신호등
 tile.traffic_right_green_1.name=초록불 신호등
 tile.traffic_right_red_1.name=빨간불 신호등
+tile.moulding_down.name=몰딩 하단
+tile.moulding_down_corner.name=몰딩 하단 코너
+tile.moulding_up.name=몰딩 상단
+tile.moulding_up_corner.name=몰딩 상단 코너
