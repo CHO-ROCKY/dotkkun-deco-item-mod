@@ -1,12 +1,16 @@
 package com.dotkkun.blocks;
 
-import net.minecraft.block.material.Material;
+
+import com.dotkkun.init.ModBlocks;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -14,14 +18,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class WindowMuntin extends BlockBase {
-    public static final AxisAlignedBB WINDOW_MUNTIN_WEST_AABB = new AxisAlignedBB(0,0,0,0.1D,1,1);
-    public static final AxisAlignedBB WINDOW_MUNTIN_EAST_AABB = new AxisAlignedBB(0.9D,0,0,1,1,1);
-    public static final AxisAlignedBB WINDOW_MUNTIN_NORTH_AABB = new AxisAlignedBB(0,0,0,1,1,0.1D);
-    public static final AxisAlignedBB WINDOW_MUNTIN_SOUTH_AABB = new AxisAlignedBB(0,0,0.9D,1,1,1);
+public class StudentDesk3 extends MultiBlockBase {
+    public static final AxisAlignedBB STUDENT_DESK_WEST_AABB = new AxisAlignedBB(0,0,0,1,1,0.4D);
+    public static final AxisAlignedBB STUDENT_DESK_EAST_AABB = new AxisAlignedBB(0,0,0.6D,1,1,1);
+    public static final AxisAlignedBB STUDENT_DESK_NORTH_AABB = new AxisAlignedBB(0.6D,0,0,1,1,1);
+    public static final AxisAlignedBB STUDENT_DESK_SOUTH_AABB = new AxisAlignedBB(0,0,0,0.4D,1,1);
+
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-    public WindowMuntin(String name, Material material) {
+    public StudentDesk3(String name, Material material) {
         super(name, material);
         setHardness(2.0f);
         setHarvestLevel("axe", -1);
@@ -34,16 +39,15 @@ public class WindowMuntin extends BlockBase {
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
         switch(state.getValue(FACING)){
             case WEST:
-                return WINDOW_MUNTIN_WEST_AABB;
+                return STUDENT_DESK_WEST_AABB;
             case EAST:
-                return WINDOW_MUNTIN_EAST_AABB;
+                return STUDENT_DESK_EAST_AABB;
             case NORTH:
-                return WINDOW_MUNTIN_NORTH_AABB;
+                return STUDENT_DESK_NORTH_AABB;
             case SOUTH:
             default:
-                return WINDOW_MUNTIN_SOUTH_AABB;
+                return STUDENT_DESK_SOUTH_AABB;
         }
-
     }
 
     @Override
@@ -117,5 +121,42 @@ public class WindowMuntin extends BlockBase {
     public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
         return this.getDefaultState().withProperty(FACING, placer.getAdjustedHorizontalFacing().getOpposite());
     }
-}
 
+    @Override
+    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack){
+        BlockPos pos1 = pos.up();
+        BlockPos pos2 = pos1.up();
+        if(placer instanceof EntityPlayer){
+            worldIn.setBlockState(pos1, ModBlocks.BEVERAGE_REFRIGERATOR_2.getDefaultState().withProperty(FACING, placer.getAdjustedHorizontalFacing().getOpposite()));
+            worldIn.setBlockState(pos2, ModBlocks.BEVERAGE_REFRIGERATOR_3.getDefaultState().withProperty(FACING, placer.getAdjustedHorizontalFacing().getOpposite()));
+        }
+    }
+
+    @Override
+    public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest){
+        BlockPos pos1;
+        BlockPos pos2;
+        switch(state.getValue(FACING)){
+            case WEST:
+                pos1 = pos.north();
+                pos2 = pos1.north();
+                break;
+            case SOUTH:
+                pos1 = pos.west();
+                pos2 = pos1.west();
+                break;
+            case EAST:
+                pos1 = pos.south();
+                pos2 = pos1.south();
+                break;
+            case NORTH:
+            default:
+                pos1 = pos.east();
+                pos2 = pos1.east();
+                break;
+        }
+        world.setBlockState(pos1, net.minecraft.init.Blocks.AIR.getDefaultState(), world.isRemote ? 11 : 3);
+        world.setBlockState(pos2, net.minecraft.init.Blocks.AIR.getDefaultState(), world.isRemote ? 11 : 3);
+        return world.setBlockState(pos, net.minecraft.init.Blocks.AIR.getDefaultState(), world.isRemote ? 11 : 3);
+    }
+}
